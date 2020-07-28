@@ -1,0 +1,322 @@
+﻿      <?xml-stylesheet href="http://www.custodium.com/docs/otros/dte/dte.xsl" type="text/xsl"?>
+      <Document Domain="inacap" Type="DTE">
+        <Issuer>
+          <PI Type="Rut"></PI>
+        </Issuer>
+        <Signers>
+          <Signer>
+            <PI Type="Rut">78456070-8</PI>
+          </Signer>
+        </Signers>
+        <Recipients>
+          <Recipient>
+            <PI Type="Role">Funcionario</PI>
+          </Recipient>
+        </Recipients>
+        <Attributes>
+          <Attribute Type="FOLIO">2923</Attribute>
+          <Attribute Type="FECHAEMISION">2020-05-18</Attribute>
+          <Attribute Type="FECHAVENCIMIENTO"></Attribute>
+          <Attribute Type="RUTRECEPTOR"></Attribute>
+          <Attribute Type="NOMBRERECEPTOR"></Attribute>
+          <Attribute Type="DIRECCIONRECEPTOR"></Attribute>
+          <Attribute Type="RUTEMISOR">78456070-8</Attribute>
+          <Attribute Type="NOMBREEMISOR"></Attribute>
+          <Attribute Type="SUCURSAL"></Attribute>
+        </Attributes>
+        <Content>
+          <DTE version="1.0">
+            <Documento ID="F2923T61">
+              <Encabezado>
+                <IdDoc>
+                  <TipoDTE>61</TipoDTE>
+                  <Folio>2923</Folio>
+                  <FchEmis>2020-05-18</FchEmis>
+                  <TermPagoGlosa>OC 30 Dias</TermPagoGlosa>
+                  <FchVenc>2020-06-17</FchVenc>
+                </IdDoc>
+                <Emisor>
+                  <RUTEmisor>78456070-8</RUTEmisor>
+                  <RznSoc>COMERCIAL CASTRO Y CASTRO LTDA. </RznSoc>
+                  <GiroEmis>Ferreteria</GiroEmis>
+                  <Telefono>56712714476</Telefono>
+                  <Acteco>523410</Acteco>
+                  <DirOrigen>6 Sur 2145</DirOrigen>
+                  <CmnaOrigen>Talca</CmnaOrigen>
+                  <CiudadOrigen>Talca</CiudadOrigen>
+                </Emisor>
+                <Receptor>
+                  <RUTRecep>87020800-6</RUTRecep>
+                  <RznSocRecep>CORPORACION CENTRO DE FORMACION TECNICA INACAP</RznSocRecep>
+                  <GiroRecep>ENSEÑANZA SUPERIOR EN CENTROS DE FORMACI</GiroRecep>
+                  <Contacto>dtecftec@inacap.cl,recepcion@custodium.com</Contacto>
+                  <DirRecep>AVDA. VITACURA 10151</DirRecep>
+                  <CmnaRecep>Santiago</CmnaRecep>
+                  <CiudadRecep>SANTIAGO</CiudadRecep>
+                </Receptor>
+                <Totales>
+                  <MntNeto>108012</MntNeto>
+                  <TasaIVA>19</TasaIVA>
+                  <IVA>20522</IVA>
+                  <MntTotal>128534</MntTotal>
+                </Totales>
+              </Encabezado>
+              <Detalle>
+                <NroLinDet>1</NroLinDet>
+                <CdgItem>
+                  <TpoCodigo>Interna</TpoCodigo>
+                  <VlrCodigo>0051216</VlrCodigo>
+                </CdgItem>
+                <NmbItem>BROCA MADERA 16MM ALPEN</NmbItem>
+                <DscItem>[0051216] BROCA MADERA 16MM ALPEN</DscItem>
+                <QtyItem>2</QtyItem>
+                <UnmdItem>Unid</UnmdItem>
+                <PrcItem>6837</PrcItem>
+                <MontoItem>13675</MontoItem>
+              </Detalle>
+              <Detalle>
+                <NroLinDet>2</NroLinDet>
+                <CdgItem>
+                  <TpoCodigo>Interna</TpoCodigo>
+                  <VlrCodigo>0051217</VlrCodigo>
+                </CdgItem>
+                <NmbItem>BROCA MADERA 18MM ALPEN</NmbItem>
+                <DscItem>[0051217] BROCA MADERA 18MM ALPEN</DscItem>
+                <QtyItem>2</QtyItem>
+                <UnmdItem>Unid</UnmdItem>
+                <PrcItem>10855</PrcItem>
+                <MontoItem>21709</MontoItem>
+              </Detalle>
+              <Detalle>
+                <NroLinDet>3</NroLinDet>
+                <CdgItem>
+                  <TpoCodigo>Interna</TpoCodigo>
+                  <VlrCodigo>0012659</VlrCodigo>
+                </CdgItem>
+                <NmbItem>Juego Llave Allen 1.5-10mm 9 Pcs</NmbItem>
+                <DscItem>[0012659] JUEGO LLAVE ALLEN LARGA 1.5-10MM 9PCS 5093L FORCE</DscItem>
+                <QtyItem>1</QtyItem>
+                <UnmdItem>Unid</UnmdItem>
+                <PrcItem>6710</PrcItem>
+                <MontoItem>6710</MontoItem>
+              </Detalle>
+              <Detalle>
+                <NroLinDet>4</NroLinDet>
+                <CdgItem>
+                  <TpoCodigo>Interna</TpoCodigo>
+                  <VlrCodigo>0039587</VlrCodigo>
+                </CdgItem>
+                <NmbItem>Broca Piedra 13mm L 150/90mm</NmbItem>
+                <DscItem>[0039587] BROCA PIEDRA 10MM 120/80MM ALPEN</DscItem>
+                <QtyItem>2</QtyItem>
+                <UnmdItem>Unid</UnmdItem>
+                <PrcItem>1980</PrcItem>
+                <MontoItem>3960</MontoItem>
+              </Detalle>
+              <Detalle>
+                <NroLinDet>5</NroLinDet>
+                <CdgItem>
+                  <TpoCodigo>Interna</TpoCodigo>
+                  <VlrCodigo>0039588</VlrCodigo>
+                </CdgItem>
+                <NmbItem>Broca Piedra 13mm L 150/90mm</NmbItem>
+                <DscItem>[0039588] BROCA PIEDRA 12MM 150/90MM ALPEN</DscItem>
+                <QtyItem>2</QtyItem>
+                <UnmdItem>Unid</UnmdItem>
+                <PrcItem>2279</PrcItem>
+                <MontoItem>4558</MontoItem>
+              </Detalle>
+              <Detalle>
+                <NroLinDet>6</NroLinDet>
+                <CdgItem>
+                  <TpoCodigo>Interna</TpoCodigo>
+                  <VlrCodigo>0039590</VlrCodigo>
+                </CdgItem>
+                <NmbItem>Broca Piedra 13mm L 150/90mm</NmbItem>
+                <DscItem>[0039590] BROCA PIEDRA 6MM 100/60MM ALPEN</DscItem>
+                <QtyItem>2</QtyItem>
+                <UnmdItem>Unid</UnmdItem>
+                <PrcItem>1018</PrcItem>
+                <MontoItem>2036</MontoItem>
+              </Detalle>
+              <Detalle>
+                <NroLinDet>7</NroLinDet>
+                <CdgItem>
+                  <TpoCodigo>Interna</TpoCodigo>
+                  <VlrCodigo>0033479</VlrCodigo>
+                </CdgItem>
+                <NmbItem>PER.COCHE NC   3/8&amp;quot; X 5&amp;quot;</NmbItem>
+                <DscItem>[0033479] PERNO COCHE 3/8&amp;quot;x5&amp;quot; UNC IMPORTPER</DscItem>
+                <QtyItem>80</QtyItem>
+                <UnmdItem>Unid</UnmdItem>
+                <PrcItem>177</PrcItem>
+                <MontoItem>14160</MontoItem>
+              </Detalle>
+              <Detalle>
+                <NroLinDet>8</NroLinDet>
+                <CdgItem>
+                  <TpoCodigo>Interna</TpoCodigo>
+                  <VlrCodigo>0033413</VlrCodigo>
+                </CdgItem>
+                <NmbItem>TUE.HEX. G-2 NC  3/8&amp;quot;</NmbItem>
+                <DscItem>[0033413] TUERCA HEXAGONAL 3/8&amp;quot; UNC G-2  IMPORTPER</DscItem>
+                <QtyItem>80</QtyItem>
+                <UnmdItem>Unid</UnmdItem>
+                <PrcItem>23</PrcItem>
+                <MontoItem>1840</MontoItem>
+              </Detalle>
+              <Detalle>
+                <NroLinDet>9</NroLinDet>
+                <CdgItem>
+                  <TpoCodigo>Interna</TpoCodigo>
+                  <VlrCodigo>0036693</VlrCodigo>
+                </CdgItem>
+                <NmbItem>CODO CEMENTAR PVC 45° X 50MM (copiar)</NmbItem>
+                <DscItem>[0036693] CODO PVC HIDRAULICO 63MM 45°</DscItem>
+                <QtyItem>1</QtyItem>
+                <UnmdItem>Unid</UnmdItem>
+                <PrcItem>2196</PrcItem>
+                <MontoItem>2196</MontoItem>
+              </Detalle>
+              <Detalle>
+                <NroLinDet>10</NroLinDet>
+                <CdgItem>
+                  <TpoCodigo>Interna</TpoCodigo>
+                  <VlrCodigo>0039600</VlrCodigo>
+                </CdgItem>
+                <NmbItem>BROCA MADERA 8MM</NmbItem>
+                <DscItem>[0039600] BROCA MADERA 5MM ALPEN</DscItem>
+                <QtyItem>2</QtyItem>
+                <UnmdItem>Unid</UnmdItem>
+                <PrcItem>3481</PrcItem>
+                <MontoItem>6962</MontoItem>
+              </Detalle>
+              <Detalle>
+                <NroLinDet>11</NroLinDet>
+                <CdgItem>
+                  <TpoCodigo>Interna</TpoCodigo>
+                  <VlrCodigo>0039601</VlrCodigo>
+                </CdgItem>
+                <NmbItem>BROCA MADERA 8MM</NmbItem>
+                <DscItem>[0039601] BROCA MADERA 6MM ALPEN</DscItem>
+                <QtyItem>2</QtyItem>
+                <UnmdItem>Unid</UnmdItem>
+                <PrcItem>1539</PrcItem>
+                <MontoItem>3078</MontoItem>
+              </Detalle>
+              <Detalle>
+                <NroLinDet>12</NroLinDet>
+                <CdgItem>
+                  <TpoCodigo>Interna</TpoCodigo>
+                  <VlrCodigo>0036537</VlrCodigo>
+                </CdgItem>
+                <NmbItem>BROCA MADERA 8MM</NmbItem>
+                <DscItem>[0036537] BROCA MADERA 8MM ALPEN(1586289)</DscItem>
+                <QtyItem>2</QtyItem>
+                <UnmdItem>Unid</UnmdItem>
+                <PrcItem>4907</PrcItem>
+                <MontoItem>9814</MontoItem>
+              </Detalle>
+              <Detalle>
+                <NroLinDet>13</NroLinDet>
+                <CdgItem>
+                  <TpoCodigo>Interna</TpoCodigo>
+                  <VlrCodigo>0036538</VlrCodigo>
+                </CdgItem>
+                <NmbItem>BROCA MADERA 8MM</NmbItem>
+                <DscItem>[0036538] BROCA MADERA 10MM ALPEN</DscItem>
+                <QtyItem>2</QtyItem>
+                <UnmdItem>Unid</UnmdItem>
+                <PrcItem>3267</PrcItem>
+                <MontoItem>6534</MontoItem>
+              </Detalle>
+              <Detalle>
+                <NroLinDet>14</NroLinDet>
+                <CdgItem>
+                  <TpoCodigo>Interna</TpoCodigo>
+                  <VlrCodigo>0039598</VlrCodigo>
+                </CdgItem>
+                <NmbItem>BROCA MADERA 8MM</NmbItem>
+                <DscItem>[0039598] BROCA MADERA 12MM ALPEN</DscItem>
+                <QtyItem>2</QtyItem>
+                <UnmdItem>Unid</UnmdItem>
+                <PrcItem>5390</PrcItem>
+                <MontoItem>10780</MontoItem>
+              </Detalle>
+              <Referencia>
+                <NroLinRef>1</NroLinRef>
+                <TpoDocRef>33</TpoDocRef>
+                <FolioRef>52017</FolioRef>
+                <FchRef>2020-04-16</FchRef>
+                <CodRef>1</CodRef>
+                <RazonRef>Sobreescribe Documento</RazonRef>
+              </Referencia>
+              <TED version="1.0">
+                <DD>
+                  <RE>78456070-8</RE>
+                  <TD>61</TD>
+                  <F>2923</F>
+                  <FE>2020-05-18</FE>
+                  <RR>87020800-6</RR>
+                  <RSR>CORPORACION CENTRO DE FORMACION TECNICA </RSR>
+                  <MNT>128534</MNT>
+                  <IT1>BROCA MADERA 16MM ALPEN</IT1>
+                  <CAF version="1.0">
+                    <DA>
+                      <RE>78456070-8</RE>
+                      <RS>COMERCIAL CASTRO Y CASTRO LIMITADA</RS>
+                      <TD>61</TD>
+                      <RNG>
+                        <D>2915</D>
+                        <H>3029</H>
+                      </RNG>
+                      <FA>2020-05-14</FA>
+                      <RSAPK>
+                        <M>wt9BHVw0NGvfj29lohuxjeG7jITbnP5z/OLadsHm8w1vHHF6rwqQiSBARDzGw6rMWeU1 MG/Bl0rcjR2geEYJw</M>
+                        <E>Aw</E>
+                      </RSAPK>
+                      <IDK>300</IDK>
+                    </DA>
+                    <FRMA algoritmo="SHA1withRSA">nRcGm0plKUcphjUamt2BkDB8YAKT0NFaLIAy3/RapVTpETX8uJhBq/fA1AAtWYKnkwYTsVeYEjaWe 2f9vPe7w</FRMA>
+                  </CAF>
+                  <TSTED>2020-05-18T16:39:38</TSTED>
+                </DD>
+                <FRMT algoritmo="SHA1withRSA">HmKTzv8vLHGCEAcISSwjJsR3sVMaCqj uTXMv CzXYBODTsLaQSyrXj9dzJFmIj00OXYeHnvUlHrWylXo9b04w</FRMT>
+              </TED>
+              <TmstFirma>2020-05-18T16:39:38</TmstFirma>
+            </Documento>
+            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+              <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+                <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+                <Reference URI="#F2923T61">
+                  <Transforms>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+                  </Transforms>
+                  <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+                  <DigestValue>96lVrKz2/T GR2XIu5rujMcGPJI</DigestValue>
+                </Reference>
+              </SignedInfo>
+              <SignatureValue>zfTzI2AFHDuL3oNlZE5iKP5xSHFKAyBcaeeQir1tb6bD6JlgjQw//6Yp0MTJDvrfublfnWvq3uAVwenyft3ULdiXVd3qCo1alJYpaX6lI cNcVAfea7FFIcXySx5lP8E2BukUB8cQDW026b/hkWAs7yc1PCUupOjKUfXdfbU1FU</SignatureValue>
+              <KeyInfo>
+                <KeyValue>
+                  <RSAKeyValue>
+                    <Modulus>8ehkoUC99j97PXrwOMte6jZwhMLOAuaWqQX9hEWodQYxd5JT/1eilr4Cj5Y8Gi0dGz1k1fdOkYzYD2Y6518DsBZneeGkQSwvi9Ivfx8TiwDQ1j2pWpHZRV22cOqd1wgK6PeEvPEntQX xBPDhyqvakEcGeKl5OzLLXgml0r4kIM</Modulus>
+                    <Exponent>AQAB</Exponent>
+                  </RSAKeyValue>
+                </KeyValue>
+                <X509Data>
+                  <X509Certificate>MIIGQzCCBSugAwIBAgIKYUtT7gAAAA28RzANBgkqhkiG9w0BAQUFADCB0jELMAkGA1UEBhMCQ0wxHTAbBgNVBAgTFFJlZ2lvbiBNZXRyb3BvbGl0YW5hMREwDwYDVQQHEwhTYW50aWFnbzEUMBIGA1UEChMLRS1DRVJUQ0hJTEUxIDAeBgNVBAsTF0F1dG9yaWRhZCBDZXJ0aWZpY2Fkb3JhMTAwLgYDVQQDEydFLUNFUlRDSElMRSBDQSBGSVJNQSBFTEVDVFJPTklDQSBTSU1QTEUxJzAlBgkqhkiG9w0BCQEWGHNjbGllbnRlc0BlLWNlcnRjaGlsZS5jbDAeFw0xOTA0MjkyMDM2MThaFw0yMjA0MjgyMDM2MThaMIHEMQswCQYDVQQGEwJDTDEaMBgGA1UECAwRUkVHScOTTiBERUwgTUFVTEUxDjAMBgNVBAcTBVRhbGNhMScwJQYDVQQKEx5DT01FUkNJQUwgQ0FTVFJPIFkgQ0FTVFJPIExUREExEzARBgNVBAsTCkZFUlJFVEVSSUExITAfBgNVBAMTGEpVQU4gUEFVTE8gQ0FTVFJPIENPTkNIQTEoMCYGCSqGSIb3DQEJARYZanBjYXN0cm9jQGNvbWVyY2lhbGN5Yy5jbDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA8ehkoUC99j97PXrwOMte6jZwhMLOAuaWqQX9hEWodQYxd5JT/1eilr4Cj5Y8Gi0dGz1k1fdOkYzYD2Y6518DsBZneeGkQSwvi9Ivfx8TiwDQ1j2pWpHZRV22cOqd1wgK6PeEvPEntQX xBPDhyqvakEcGeKl5OzLLXgml0r4kIMCAwEAAaOCAqkwggKlMIIBTwYDVR0gBIIBRjCCAUIwggE BggrBgEEAcNSBTCCATAwLQYIKwYBBQUHAgEWIWh0dHA6Ly93d3cuZS1jZXJ0Y2hpbGUuY2wvQ1BTLmh0bTCB/gYIKwYBBQUHAgIwgfEege4ARQBsACAAcgBlAHMAcABvAG4AZABlAHIAIABlAHMAdABlACAAZgBvAHIAbQB1AGwAYQByAGkAbwAgAGUAcwAgAHUAbgAgAHIAZQBxAHUAaQBzAGkAdABvACAAaQBuAGQAaQBzAHAAZQBuAHMAYQBiAGwAZQAgAHAAYQByAGEAIABkAGEAcgAgAGkAbgBpAGMAaQBvACAAYQBsACAAcAByAG8AYwBlAHMAbwAgAGQAZQAgAGMAZQByAHQAaQBmAGkAYwBhAGMAaQDzAG4ALgAgAFAAbwBzAHQAZQByAGkAbwByAG0AZQBuAHQAZQAsMB0GA1UdDgQWBBSDrTDetDpNQYgguCTKj/SCsDOLdTALBgNVHQ8EBAMCBPAwIwYDVR0RBBwwGqAYBggrBgEEAcEBAaAMFgoxNDM5OTE3Ny02MB8GA1UdIwQYMBaAFHjhPp/SErN6PI3NMA5Ts0MpB7NVMD4GA1UdHwQ3MDUwM6AxoC GLWh0dHA6Ly9jcmwuZS1jZXJ0Y2hpbGUuY2wvZWNlcnRjaGlsZWNhRkVTLmNybDA6BggrBgEFBQcBAQQuMCwwKgYIKwYBBQUHMAGGHmh0dHA6Ly9vY3NwLmVjZXJ0Y2hpbGUuY2wvb2NzcDA9BgkrBgEEAYI3FQcEMDAuBiYrBgEEAYI3FQiC3IMvhZOMZoXVnReC4twnge/sPGGBy54UhqiCWAIBZAIBBDAjBgNVHRIEHDAaoBgGCCsGAQQBwQECoAwWCjk2OTI4MTgwLTUwDQYJKoZIhvcNAQEFBQADggEBAFQj4Sajt3Tubg5x1JSOHmMzUWJU JnaS7GCNCujYdgNiRXLVh30gNIfbkNhAg2GQZ79jntQ6Q9NXL61AgAyNt6MJBIkYORLC/tPq8 nx4AEYbcocuFs0A pe2ctcFu/InZciMtmU76chUwj5Ihj7rRiqri5tyA1SJv8siSJqRtO5O7cBpfMOnakomJX9gT8JXqSjDRPCbQg8AbWA3UonaPihrHiGDSuIRzsYzW8k48Jg69LPZVK9nd BI8HF2iPSv607lBmgSp0JF4vLRnFOz O6ouu4Xe1LEzhdJ2N/AxHRkE36b0xyPmY3ySLWEnwWjroO4ovotvn90wsxtBCulk</X509Certificate>
+                </X509Data>
+              </KeyInfo>
+            </Signature>
+          </DTE>
+        </Content>
+        <Log>
+          <Process id="MOTOR" version="1.0" build="">
+            <item filename="http://inacap2005.acepta.com/v01/A87253C390424C43ADCCF1A43B1189869E5D9023"/>
+            <item name="custodium-uri">http://inacap2005.acepta.com/v01/A87253C390424C43ADCCF1A43B1189869E5D9023</item>
+          </Process>
+        </Log>
+      </Document>
+    

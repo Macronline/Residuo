@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de recoleccion</title>
+
+    <!-- Bootstrap4 css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Page css -->
+    <link rel="stylesheet" href="css/solicitud_recoleccion.css">
+    <link rel="stylesheet" href="css/global.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img class="usuario-logo" src="images/demo/image-placeholder.png" alt="">
+        <a class="navbar-brand" href="index.html">MyResiduo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-1">
+                    <a class="nav-link active" href="solicitud_recoleccion_usuario.html">Solicitud de recoleccion</a>
+                </li>
+                <li class="nav-item mr-1">
+                    <a class="nav-link" href="registro_ot_res_mayores.html">OT residuos mayores</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Historicos
+          </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="listado_solicitudes.html">Historico de solicitudes</a>
+                        <a class="dropdown-item" href="historico_res_mayores.html">Historico de retiros</a>
+                    </div>
+                </li>
+                <li class="nav-item mr-1">
+                    <a class="nav-link" href="usuario_menu.html">Reportes</a>
+                </li>
+                <li class="nav-item mr-1">
+                    <a class="nav-link" href="reporte_recoleccion_realizada.html">Recolecciones realizadas</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- navbar -->
+
+    <!-- container-fluid -->
+    <div class="container-fluid">
+        <h1 class="title text-center">Solicitud de recoleccion</h1>
+        <hr class="title-separator">
+        <div class="row">
+            <!-- col-4 -->
+            <div class="col-4"></div>
+
+            <!-- nueva solicitud de recoleccion -->
+            <div class="col-4">
+                <!-- formulario de solicitud de recoleccion -->
+                <!--<form action="" class="border shadow">-->
+                <!-- Munic -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Municipalidad</span>
+                    </div>
+                    <select class="custom-select" id="ddlMunic">
+                    </select>
+                </div>
+                <!-- Munic -->
+
+                <!-- nombre -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Nombre</span>
+                    </div>
+                    <input id="txtNombre" type="text" class="form-control" placeholder="Nombre">
+                </div>
+                <!-- nombre -->
+
+                <!-- rut -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Rut</span>
+                    </div>
+                    <input id="txtRut" type="text" class="form-control" placeholder="Rut">
+                </div>
+                <!-- rut -->
+
+                <!-- direccion -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Direccion</span>
+                    </div>
+                    <input id="txtDireccion" type="text" class="form-control" placeholder="Direccion">
+                </div>
+                <!-- direccion -->
+
+                <!-- correo -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Correo</span>
+                    </div>
+                    <input id="txtCorreo" type="email" class="form-control" placeholder="Correo">
+                </div>
+                <!-- correo -->
+
+                <!-- telefono -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Telefono</span>
+                    </div>
+                    <input id="txtTelefono" type="tel" class="form-control" placeholder="Telefono">
+                </div>
+                <!-- telefono -->
+
+                <!-- tipo residuo -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Tipo de residuo</span>
+                    </div>
+                    <input id="txtTipo_residuo" type="text" class="form-control" placeholder="Tipo de residuo">
+                </div>
+                <!-- tipo residuo -->
+
+                <!-- comentarios -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Comentarios</span>
+                    </div>
+                    <textarea name="comentarios" id="txtComentarios" placeholder="Comentarios"></textarea>
+                </div>
+                <!-- comentarios -->
+
+                <div class="grabar-button">
+                    <button class="btn" id="btnGrabar">Grabar</button>
+                </div>
+                <!--</form>-->
+                <!-- formulario de solicitud de recoleccion -->
+            </div>
+            <!-- nueva solicitud de recoleccion -->
+
+            <!-- col-4 -->
+            <div class="col-4"></div>
+        </div>
+    </div>
+    <!-- container-fluid -->
+
+
+    <!-- Bootstrap4 js -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Bootstrap4 js -->
+    <script src="js/funciones.js"></script>
+    <script>
+        $(function () {
+            //$("#datepicker").datepicker({
+            //      dateFormat: "dd-mm-yy"
+            //  });
+            //  // $("#datepickerHasta").datepicker();
+            //  $("#datepickerHasta").datepicker({
+            //      dateFormat: "dd-mm-yy"
+            //  });
+
+            //  //Carga nombre de usaurio conectado
+              CargarDatosIniciales();
+        });
+
+        function CargarDatosIniciales() {
+            $.ajax({
+                type: "POST",
+                url: "solicitud_recoleccion_usuario.aspx/WLeerDatosIniciales",
+                //data: "{'sNombreMunic': '" + sNombreMunic + "', 'sRutMunic': '" + sRutMunic + "', 'sNombreUserMunic': '" + sNombreUserMunic +
+                //    "', 'sRutUserMunic': '" + sRutUserMunic + "', 'sCorreoUserMunic': '" + sCorreoUserMunic + "', 'sClave': '" + sClave +
+                //    "', 'sClave2': '" + sClave2 + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+                        cargarLista('ddlMunic', obj[1], 'NombreMunic');
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        };
+
+        $("#btnGrabar").click(function (event) {
+            var sNombre = $("#txtNombre").val();
+            var sRut = $("#txtRut").val();
+            var sDireccion = $("#txtDireccion").val();
+            var sCorreo = $("#txtCorreo").val();
+            var sTelefono = $("#txtTelefono").val();
+            var sTipo_residuo = $("#txtTipo_residuo").val();
+            var sComentarios = $("#txtComentarios").val();
+            var sIdMunic = $("#ddlMunic").val();
+
+            if (sNombre == '') {
+                alert('Ingrese su Nombre');
+                return;
+            }
+            
+            $.ajax({
+                type: "POST",
+                url: "solicitud_recoleccion_usuario.aspx/WGrabarSolicitud",
+                data: "{'sNombre': '" + sNombre + "', 'sRut': '" + sRut + "', 'sDireccion': '" + sDireccion +
+                    "', 'sCorreo': '" + sCorreo + "', 'sTelefono': '" + sTelefono + "', 'sTipo_residuo': '" + sTipo_residuo +
+                    "', 'sComentarios': '" + sComentarios + "', 'sIdMunic': '" + sIdMunic + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json", 
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+                        //$("#lblNumeroOT").text(obj[1]);
+                        alert(obj[1]);
+                    }
+                    if (obj[0] == 'error') {
+                        alert(obj[1]);
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+
+        });
+
+    </script>
+</body>
+</html>

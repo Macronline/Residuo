@@ -1,0 +1,6 @@
+﻿Estimado ciudadano(a):
+
+Te informamos que con fecha [FECHA_SOLICITUD], hemos recibido su solicitud de recolección de residuos, procesaremos su solicitud y le enviaremos una orden de recolección indicando el detalle de la programación de la recolección.
+
+Si tienes cualquier duda, solo llama a [NUMERO_FONO_PARA_LLAMAR_CIUDADANO]
+Nota: Este e-mail es generado de manera automática, por favor no respondas a este mensaje.

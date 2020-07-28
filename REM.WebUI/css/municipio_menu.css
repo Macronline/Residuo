@@ -1,0 +1,29 @@
+.main-btns{
+  margin-top: 33vh;
+  width: 100%;
+  height: 200px;
+}
+
+img{
+  width: 100%;
+  height: 70%;
+}
+
+.municipio-logo{
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.row{
+  margin-top: 10vh;
+}
+
+.btn{
+  background-color: rgb(4, 4, 122);
+  width: 200px;
+  height: 50px;
+  color: white;
+  border-radius: 20px;
+  font-size: 20px;
+}

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Geocercas</title>
+
+  <!-- Bootstrap4 css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Page css -->
+  <link rel="stylesheet" href="css/registro_geocercas.css">
+  <link rel="stylesheet" href="css/global.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+      <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">MyResiduo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mr-1">
+          <a class="nav-link" href="registro_municipio.html">Municipios</a>
+        </li>
+        <li class="nav-item mr-1 active">
+          <a class="nav-link" href="registro_geocercas.html">Geocercas</a>
+        </li>
+        <li class="nav-item mr-1">
+          <a class="nav-link" href="configuracion_listado_rutas_h2q.html">Rutas</a>
+        </li>
+        <li class="nav-item mr-1">
+          <a class="nav-link" href="configuracion_vehiculos_Municipio.html">Vehiculos recolectores</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- navbar -->
+
+  <!-- container-fluid -->
+  <div class="container-fluid">
+    <h1 class="title text-center">Registro de Geocercas</h1>
+    <hr class="title-separator">
+    <!-- row -->
+    <div class="row">
+      <!-- col-3 -->
+      <div class="col-3"></div>
+      
+      <!-- alta de geocerca -->
+      <div class="col-6">
+        <section>
+          <!-- formulario geocerca -->
+         <!-- <form action="" class="border shadow">-->
+            <!-- select municipio -->
+                <span style="visibility:visible;" id="IdGeocercaParaEditar"></span>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Municipio</span>
+              </div>
+              <select class="custom-select" id="ddlmunicipio">
+              </select>
+            </div>
+            <!-- select municipio -->
+
+            <!-- nombre geocercas -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nombre Geocercas</span>
+              </div>
+              <input id="nombre-geocercas" type="text" class="form-control" placeholder="Nombre Geocercas">
+            </div>
+            <!-- nombre geocercas -->
+
+            <!-- Ubicacion -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Ubicacion</span>
+              </div>
+              <input id="ubicacion" type="text" class="form-control" placeholder="Ubicacion">
+            </div>
+            <!-- Ubicacion -->
+
+            <!-- Coordenadas -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Coordenadas</span>
+              </div>
+              <input id="coordenadas" type="text" class="form-control" placeholder="Coordenadas">
+            </div>
+            <!-- Coordenadas -->
+
+            <!-- Observaciones -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Observaciones</span>
+              </div>
+              <textarea id="observacion" type="text" class="form-control" placeholder="Observaciones"></textarea>
+            </div>
+            <!-- Observaciones -->
+
+            <div class="grabar-button">
+              <button class="btn" id="btnGrabar">Grabar</button>
+            </div>
+          <!--</form>-->
+          <!-- formulario geocerca -->
+        </section>
+      </div>
+      <!-- alta de geocerca -->
+
+      <!-- col-3 -->
+      <div class="col-3"></div>
+    </div>
+
+      <!-- Tabla de Geocercas -->
+  <section class="table-section">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <table id="tabla_geocerca">
+          <h2>Vehiculos</h2>
+          <tr>
+            <th>Municipio</th>
+            <th>Nombre Geocerca</th>
+            <th>Ubicación</th> 
+            <th>Coordenadas</th>
+            <th>Observaciones</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>UnMunicipio</td>
+            <td>unGeocerca</td>
+            <td>unaUbicacion</td>
+            <td>unCoordenadas</td>
+            <td>unaObs</td>
+            <td class="modificar"><i class="fa fa-pencil" style="color: green;"></i></td>
+            <td class="borrar"><i class="fa fa-trash" style="color: red;"></i></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </section>
+  <!-- Tabla de Geocercas -->
+
+
+
+    <!-- container-fluid -->
+  </div>
+  <!-- container-fluid -->
+
+  <!-- Bootstrap4 js -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <!-- Bootstrap4 js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/funciones.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            //$("#txtNameUser").val('m_Figueroa');
+
+            //Carga nombre de usaurio conectado
+            CargarNombreUsuarioConectado();
+
+        });
+
+        function CargarNombreUsuarioConectado() {
+            $.ajax({
+                type: "POST",
+                url: "registro_geocercas.aspx/WLeerDatosIniciales",
+                //data: "{'sNombreMunic': '" + sNombreMunic + "', 'sRutMunic': '" + sRutMunic + "', 'sNombreUserMunic': '" + sNombreUserMunic +
+                //    "', 'sRutUserMunic': '" + sRutUserMunic + "', 'sCorreoUserMunic': '" + sCorreoUserMunic + "', 'sClave': '" + sClave +
+                //    "', 'sClave2': '" + sClave2 + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+
+                        cargarLista('ddlmunicipio', obj[1], 'NombreMunic');
+
+                        $('#tabla_geocerca').find("tr:gt(0)").remove();
+                        $('#tabla_geocerca> tbody:last').append(obj[2]);
+
+                        //cargarLista('ddlMunicipio', obj[3], 'NombreMunic');
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        }
+
+        $(function () {
+            $("#ddlmunicipio").change(function () {
+                var selectedText = $(this).find("option:selected").text();
+                var IdMunicipio = $(this).val();
+                //alert("Selected Text: " + selectedText + " Value: " + IdMunicipio);
+
+                $.ajax({
+                    type: "POST",
+                    url: "registro_geocercas.aspx/WLeerGeocercasDelMunicipio",
+                    data: "{'IdMunicipio': '" + IdMunicipio + "'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        obj = parseJSON(response.d);
+                        if (obj[0] == 'Exito') {
+                            $('#tabla_geocerca').find("tr:gt(0)").remove();
+                            $('#tabla_geocerca> tbody:last').append(obj[1]);
+                        }
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+
+
+            });
+        });
+
+        $("#btnGrabar").click(function (event) {
+            var IdGeocercaParaEditar = $("#IdGeocercaParaEditar").text();
+
+            var sNombreGeocerca = $("#nombre-geocercas").val();
+            var sUbicacion = $("#ubicacion").val();
+            var sCoordenadas = $("#coordenadas").val();
+            var sObservacion = $("#observacion").val();
+
+            var sIdClienteMunicipio = $("#ddlmunicipio").val();
+            if (sIdClienteMunicipio.length == 0 || sIdClienteMunicipio == "-1") {
+                alert('Seleccione un Municipio');
+                return;
+            }
+
+            if (sNombreGeocerca == '' || sUbicacion == '' || sCoordenadas == '' || sObservacion == '' ) {
+                alert('Ingrese los datos requeridos');
+                return;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "registro_geocercas.aspx/WGrabarGeocerca",
+                data: "{'sId': '" + IdGeocercaParaEditar + "','sNombreGeocerca': '" + sNombreGeocerca + "', 'sUbicacion': '" + sUbicacion + "', 'sCoordenadas': '" + sCoordenadas +
+                    "', 'sObservacion': '" + sObservacion + "', 'sIdClienteMunicipio': '" + sIdClienteMunicipio + "'}",
+                //+ "', 'sCorreoUserMunic': '" + sCorreoUserMunic + "', 'sClave': '" + sClave +
+                //  "', 'sClave2': '" + sClave2 + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+                        $('#tabla_geocerca').find("tr:gt(0)").remove();
+                        $('#tabla_geocerca> tbody:last').append(obj[1]);
+                        alert('Operación realizada con éxito');
+
+                        $("#IdGeocercaParaEditar").text('');
+                        $("#nombre-geocercas").val('');
+                        $("#ubicacion").val('');
+                        $("#coordenadas").val('');
+                        $("#observacion").val('');
+
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+
+        });
+
+        function EditGeocerca(Id, imgCtrl) {
+
+            //Se leen los datos y se cargan en los inputs
+            $.ajax({
+                type: "POST",
+                url: "registro_geocercas.aspx/WLeerParaEditarGeocerca",
+                data: "{'Id': '" + Id + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+                        $("#nombre-geocercas").val(obj[1]);
+                        $("#ubicacion").val(obj[2]);
+                        $("#coordenadas").val(obj[3]);
+                        $("#observacion").val(obj[4]);
+                        $("#ddlmunicipio").val(obj[5]);
+                        //$("#telefono").val(obj[6]);
+
+                        $("#IdGeocercaParaEditar").text(Id);
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        }
+        function DeleteGeocerca(Id, imgCtrl) {
+            var r = confirm("¿Desea eliminar?");
+            if (r == true) {
+
+                //Se leen los datos y se cargan en los inputs
+                $.ajax({
+                    type: "POST",
+                    url: "registro_geocercas.aspx/WEliminarGeocerca",
+                    data: "{'Id': '" + Id + "'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        obj = parseJSON(response.d);
+                        if (obj[0] == 'Exito') {
+                            $('#tabla_geocerca').find("tr:gt(0)").remove();
+                            $('#tabla_geocerca> tbody:last').append(obj[1]);
+                            alert('La operación fue ejecutada');
+                        }
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            }
+        }
+
+        //$("#ddlmunicipio").change(function (e) {
+            
+        //});
+
+    </script>
+</body>
+</html>

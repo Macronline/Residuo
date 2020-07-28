@@ -1,0 +1,10 @@
+h1{
+  margin-bottom: 30px;
+}
+
+.input-group-text{
+  width: 150px;
+}
+
+textarea{
+  width: fill;

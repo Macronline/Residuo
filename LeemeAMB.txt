@@ -1,0 +1,435 @@
+USE [REM_MFP]
+GO
+
+/****** Object:  StoredProcedure [dbo].[READALL_GEOCERCA]    Script Date: 06/10/2020 14:55:03 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE PROCEDURE [dbo].[READALL_GEOCERCA_CON_MUNICIPIO]
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	SELECT D.*, M.*
+	FROM TBL_BUS_GEOCERCA D inner join TBL_BUS_ClienteMunicipio M 
+	on D.IdClienteMunicipio = M.Id
+	ORDER BY D.IdClienteMunicipio;
+	
+END
+
+
+GO
+
+===========================================================
+USE [REM_MFP]
+GO
+/****** Object:  StoredProcedure [dbo].[READALL_Ruta_Geo_Municipio]    Script Date: 06/18/2020 15:02:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER PROCEDURE [dbo].[READALL_Ruta_Geo_Municipio]
+	--@IdClienteMunicipio bigint	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+
+select R.Id, M.NombreMunic,
+R.NombreRuta, GC.NombreGeocerca, GC.Id as IdGeocerca
+from TBL_BUS_ClienteMunicipio M, TBL_BUS_Ruta R, TBL_BUS_GEOCERCA GC, 
+TBL_BUS_REL_RUTA_GEOCERCA  RG
+WHERE 
+M.Id = R.IdClienteMunicipio AND GC.Id = RG.IdGeocerca 
+and RG.IdGeoCerca = GC.Id and RG.IdRuta = R.Id
+
+--select R.Id, M.NombreMunic,
+--R.NombreRuta,
+--GC.NombreGeocerca
+--from TBL_BUS_ClienteMunicipio M, TBL_BUS_Ruta R, TBL_BUS_GEOCERCA GC 
+--WHERE M.Id = R.IdClienteMunicipio AND GC.Id = R.IdGeoCerca
+	
+END
+==================================================
+USE [REM_MFP]
+GO
+
+/****** Object:  StoredProcedure [dbo].[READALL_GEOCERCA_CON_MUNICIPIO]    Script Date: 06/10/2020 15:55:48 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[READALL_VehRecolector_CON_MUNICIPIO]
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	SELECT V.*, M.*
+	FROM TBL_BUS_VehRecolector V inner join TBL_BUS_ClienteMunicipio M 
+	on V.IdClienteMunicipio = M.Id
+	ORDER BY M.NombreMunic;
+	
+	
+END
+
+GO
+
+======================================================
+USE [REM_MFP]
+GO
+
+/****** Object:  StoredProcedure [dbo].[INS_VehRecolector]    Script Date: 06/10/2020 16:18:27 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[INS_VehRecolector]
+	@NombreCamion  varchar(255)
+   ,@NombreMarca varchar(255)
+   ,@NombreModelo varchar(255)
+   ,@NombreTagPatente varchar(255)
+   ,@IdUserCreate bigint
+   ,@FechaCreate datetime
+   ,@IdClienteMunicipio bigint
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	INSERT INTO [dbo].[TBL_BUS_VehRecolector]
+           ([NombreCamion]           ,[NombreMarca]           ,[NombreModelo]
+           ,[NombreTagPatente]            ,[IdUserCreate]           ,[FechaCreate]
+           ,[IdClienteMunicipio])
+     VALUES
+           (@NombreCamion,				@NombreMarca
+           ,@NombreModelo          ,@NombreTagPatente
+           ,@IdUserCreate           ,@FechaCreate
+		   ,@IdClienteMunicipio)
+
+	Select Scope_Identity();
+
+END
+
+GO
+
+==================================================================
+USE [REM_MFP]
+GO
+
+/****** Object:  StoredProcedure [dbo].[UPD_VehRecolector]    Script Date: 06/10/2020 16:21:32 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[UPD_VehRecolector]
+	@Id bigint
+	,@NombreCamion  varchar(255)
+   ,@NombreMarca varchar(255)
+   ,@NombreModelo varchar(255)
+   ,@NombreTagPatente varchar(255)
+   ,@IdUserUpdate bigint
+   ,@FechaUpdate datetime
+   ,@IdClienteMunicipio bigint
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	UPDATE [dbo].[TBL_BUS_VehRecolector]
+    SET [NombreCamion] = @NombreCamion
+      ,[NombreMarca] = @NombreMarca
+      ,[NombreModelo] = @NombreModelo
+      ,[NombreTagPatente] = @NombreTagPatente
+      ,[IdUserUpdate] = @IdUserUpdate
+      ,[FechaUpdate] = @FechaUpdate
+      ,[IdClienteMunicipio] = @IdClienteMunicipio
+    WHERE Id = @Id
+
+END
+
+GO
+
+==========================================================
+
+USE [REM_MFP]
+GO
+
+/****** Object:  StoredProcedure [dbo].[DEL_VehRecolector]    Script Date: 06/10/2020 16:24:04 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[DEL_VehRecolector]
+	@Id bigint	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	DELETE FROM TBL_BUS_VehRecolector 
+	WHERE ID = @Id;
+	
+END
+
+GO
+=================================================
+USE [REM_MFP]
+GO
+
+/****** Object:  StoredProcedure [dbo].[READ_VehRecolector]    Script Date: 06/10/2020 16:32:29 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE PROCEDURE [dbo].[READ_VehRecolector]
+	@Id bigint	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	SELECT D.*
+	FROM TBL_BUS_VehRecolector D
+	WHERE ID = @Id;
+	
+END
+
+
+GO
+===========================================
+USE [REM_MFP]
+GO
+/****** Object:  StoredProcedure [dbo].[[[READALL_VehRecolector_BY_IDMUNICIPIO]]]    Script Date: 06/16/2020 11:40:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create PROCEDURE [dbo].[READALL_VehRecolector_BY_IDMUNICIPIO]
+	@IdClienteMunicipio bigint
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	SELECT V.*, M.*
+	FROM TBL_BUS_VehRecolector V inner join TBL_BUS_ClienteMunicipio M 
+	on V.IdClienteMunicipio = M.Id
+	where V.IdClienteMunicipio = @IdClienteMunicipio
+	ORDER BY M.NombreMunic;
+	
+	
+END
+
+=====================================================
+
+USE [REM_MFP]
+GO
+/****** Object:  StoredProcedure [dbo].[READALL_GEOCERCA_BY_IDMUNICIPIO]    Script Date: 06/16/2020 11:59:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+Create PROCEDURE [dbo].[READALL_GEOCERCA_BY_IDMUNICIPIO]
+	@IdClienteMunicipio bigint
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	SELECT G.*, M.*
+	FROM TBL_BUS_GEOCERCA G inner join TBL_BUS_ClienteMunicipio M 
+	on G.IdClienteMunicipio = M.Id
+	where G.IdClienteMunicipio = @IdClienteMunicipio
+	ORDER BY G.IdClienteMunicipio;
+	
+END
+
+=====================================================
+USE [REM_MFP]
+GO
+/****** Object:  StoredProcedure [dbo].[READALL_Ruta_Geo_Municipio_BY_IDMUNICIPIO]    Script Date: 06/18/2020 15:00:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER PROCEDURE [dbo].[READALL_Ruta_Geo_Municipio_BY_IDMUNICIPIO]
+	@IdClienteMunicipio bigint	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+select R.Id, M.NombreMunic,
+R.NombreRuta, GC.NombreGeocerca, GC.Id as IdGeocerca
+from TBL_BUS_ClienteMunicipio M, TBL_BUS_Ruta R, TBL_BUS_GEOCERCA GC, 
+TBL_BUS_REL_RUTA_GEOCERCA  RG
+WHERE 
+M.Id = R.IdClienteMunicipio AND GC.Id = RG.IdGeocerca 
+and RG.IdGeoCerca = GC.Id and RG.IdRuta = R.Id
+AND R.IdClienteMunicipio =  @IdClienteMunicipio
+order by R.NombreRuta, GC.NombreGeocerca
+
+
+--select R.Id, M.NombreMunic,
+--R.NombreRuta,
+----(SELECT R.Id FROM TBL_BUS_Ruta R WHERE R.IdClienteMunicipio = M.Id) AS ID_RUTA
+--GC.Id
+--from TBL_BUS_ClienteMunicipio M, TBL_BUS_Ruta R, TBL_BUS_GEOCERCA GC 
+--WHERE M.Id = R.IdClienteMunicipio AND GC.Id = R.IdGeoCerca
+--AND R.IdClienteMunicipio =@IdClienteMunicipio
+
+
+END
+
+
+
+===============================================
+
+USE [REM_MFP]
+GO
+/****** Object:  StoredProcedure [dbo].[INS_RUTA]    Script Date: 06/22/2020 15:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[INS_RUTA]
+	@NombreRuta  varchar(255)
+   ,@IdUserCreate bigint
+   ,@FechaCreate datetime
+   ,@IdClienteMunicipio bigint
+   ,@IdGeocerca bigint
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	INSERT INTO [dbo].[TBL_BUS_RUTA]
+           ([NombreRuta]           ,[IdUserCreate]           ,[FechaCreate]
+           ,[IdClienteMunicipio])
+     VALUES
+           (@NombreRuta				
+           ,@IdUserCreate           ,@FechaCreate
+		   ,@IdClienteMunicipio)
+
+---- Inserta en la tabla de ralacion
+--SELECT TOP 1 ID FROM [dbo].[TBL_BUS_RUTA] ORDER BY ID DESC
+INSERT INTO [dbo].[TBL_BUS_REL_RUTA_GEOCERCA]
+           (
+           [IdRuta]
+           ,[IdGeocerca]
+           ,[IdUserCreate]
+           ,[FechaCreate])
+     VALUES
+          ((SELECT TOP 1 ID FROM [dbo].[TBL_BUS_RUTA] ORDER BY ID DESC),
+          @IdGeocerca,
+          @IdUserCreate,
+          @FechaCreate          
+          )
+
+	Select Scope_Identity();
+
+END
+
+===================================
+USE [REM_MFP]
+GO
+/****** Object:  StoredProcedure [dbo].[READ_RUTA]    Script Date: 06/25/2020 16:37:46 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+ALTER PROCEDURE [dbo].[READ_RUTA]
+	@Id bigint	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	
+	select R.Id, M.NombreMunic, M.Id as IdClienteMunicipio,
+R.NombreRuta, GC.NombreGeocerca, GC.Id as IdGeocerca
+from TBL_BUS_ClienteMunicipio M, TBL_BUS_Ruta R, TBL_BUS_GEOCERCA GC, 
+TBL_BUS_REL_RUTA_GEOCERCA  RG
+WHERE 
+M.Id = R.IdClienteMunicipio AND GC.Id = RG.IdGeocerca 
+and RG.IdGeoCerca = GC.Id and RG.IdRuta = R.Id
+and r.id=@Id
+
+
+	--SELECT D.*
+	--FROM TBL_BUS_RUTA D
+	--WHERE ID = '13' -- @Id;
+	
+END
+
+
+
+
+
+
+
+
+
+
+

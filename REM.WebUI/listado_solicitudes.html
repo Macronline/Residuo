@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de solicitudes</title>
+
+    <!-- Bootstrap4 css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Page css -->
+    <link rel="stylesheet" href="css/listado_solicitudes.css">
+    <link rel="stylesheet" href="css/global.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img class="usuario-logo" src="images/demo/image-placeholder.png" alt="" id="idLogoMunic">
+        <a class="navbar-brand" href="index.html">MyResiduo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-1">
+                    <a class="nav-link" href="solicitud_recoleccion_usuario.html">Solicitud de recoleccion</a>
+                </li>
+                <li class="nav-item mr-1">
+                    <a class="nav-link" href="registro_ot_res_mayores.html">OT residuos mayores</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Historicos
+          </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="listado_solicitudes.html">Historico de solicitudes</a>
+                        <a class="dropdown-item" href="historico_res_mayores.html">Historico de retiros</a>
+                    </div>
+                </li>
+                <li class="nav-item mr-1">
+                    <a class="nav-link" href="usuario_menu.html">Reportes</a>
+                </li>
+                <li class="nav-item mr-1">
+                    <a class="nav-link" href="reporte_recoleccion_realizada.html">Recolecciones realizadas</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- navbar -->
+
+    <div class="container-fluid">
+        <h1 class="title text-center">Listado de solicitudes</h1>
+        <hr class="title-separator">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <table id="tabla_solicitudes">
+                    <tr>
+                        <th>Informe de gestion</th>
+                        <th>Rutas recorridas</th>
+                        <th>Dia</th>
+                        <th>Inicio</th>
+                        <th>Termino</th>
+                        <th>Kg descargados</th>
+                        <th>Camion</th>
+                        <th>Chofer</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>DÍA 2/03/2020 HASTA 8/03/2020</td>
+                        <td>RUTA 1 GUALLIGUAYCA</td>
+                        <td>02-03-2020</td>
+                        <td>9:00</td>
+                        <td>13:00</td>
+                        <td>2000</td>
+                        <td>Chhy13</td>
+                        <td>Juanito</td>
+                        <td class="modificar"><i class="fa fa-pencil" style="color: green;"></i></td>
+                        <td class="borrar"><i class="fa fa-trash" style="color: red;"></i></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Total:</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+
+    <!-- Bootstrap4 js -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Bootstrap4 js -->
+    <script src="js/funciones.js"></script>
+    <script>
+        $(document).ready(function () {
+            //$("#datepicker").datepicker({
+            //    dateFormat: "dd-mm-yy"
+            //});
+            //// $("#datepickerHasta").datepicker();
+            //$("#datepickerHasta").datepicker({
+            //    dateFormat: "dd-mm-yy"
+            //});
+            
+            CargarLogo();
+
+            //Carga nombre de usaurio conectado
+            CargarDatosIniciales();
+        });
+
+        function CargarLogo() {
+            $.ajax({
+                type: "POST",
+                url: "registro_ot.aspx/WLeerLogoMunicipio",
+                //data: "{'sIdSolicitud': '" + sIdSolicitud + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+                        $("#idLogoMunic").attr('src', obj[1]);
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        }
+
+        function CargarDatosIniciales() {
+            $('#tabla_solicitudes').find("tr:gt(0)").remove();
+
+            $.ajax({
+                type: "POST",
+                url: "listado_solicitudes.aspx/WLeerDatosIniciales",
+                //data: "{'sNombreMunic': '" + sNombreMunic + "', 'sRutMunic': '" + sRutMunic + "', 'sNombreUserMunic': '" + sNombreUserMunic +
+                //    "', 'sRutUserMunic': '" + sRutUserMunic + "', 'sCorreoUserMunic': '" + sCorreoUserMunic + "', 'sClave': '" + sClave +
+                //    "', 'sClave2': '" + sClave2 + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+                        $('#tabla_solicitudes').find("tr:gt(0)").remove();
+                        $('#tabla_solicitudes> tbody:last').append(obj[1]);
+                        //cargarLista('ddlCamion', obj[2], 'NombreCamion');
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        };
+
+
+        $("#btnFiltrar").click(function (event) {
+            var sIdRuta = $("#ddlRuta").val();
+            var sIdCamion = $("#ddlCamion").val();
+            var sFechaDesde = $("#datepicker").val();
+            var sFechaHasta = $("#datepickerHasta").val();
+
+            $.ajax({
+                type: "POST",
+                url: "reporte_informacion_consolidada.aspx/WConsultarOTs",
+                data: "{'sFechaDesde': '" + sFechaDesde + "', 'sFechaHasta': '" + sFechaHasta + "', 'sIdRuta': '" + sIdRuta +
+                    "', 'sIdCamion': '" + sIdCamion + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+                        $('#tabla_ots').find("tr:gt(0)").remove();
+                        $('#tabla_ots> tbody:last').append(obj[1]);
+                    }
+                    if (obj[0] == 'errorvalidacion') {
+                        alert(obj[1]);
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+
+        });
+
+        function EditSolicitud(Id, imgCtrl) {
+
+            //var sIdRuta = $("#ddlRuta").val();
+            //var sIdCamion = $("#ddlCamion").val();
+            //var sFechaDesde = $("#datepicker").val();
+            //var sFechaHasta = $("#datepickerHasta").val();
+
+            //setCookie('sIdRuta', sIdRuta, 5);
+            //setCookie('sIdCamion', sIdCamion, 5);
+            //setCookie('sFechaDesde', sFechaDesde, 5);
+            //setCookie('sFechaHasta', sFechaHasta, 5);
+            setCookie('sIdSolicitud', Id, 5);
+
+            //window.location.href = "registro_ot_copia.html?Id=" + Id;
+            window.location.href = "registro_ot_res_mayores.html";
+
+        }
+    </script>
+</body>
+</html>

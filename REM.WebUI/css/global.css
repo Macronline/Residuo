@@ -1,0 +1,94 @@
+/* General */
+h1,p,h2,h3,span,div{
+    font-family: 'Montserrat', sans-serif;
+}
+h1,title{
+    margin-top: 30px;
+    color: rgb(4, 4, 122);
+    font-weight: bold;
+}
+.title-separator{
+    width: 100px;
+    border-width: 3px;
+    background-color: black;
+    margin-bottom: 50px;
+}
+.container-fluid{
+    margin-bottom: 50px;
+}
+body{
+    background-color: whitesmoke;
+}
+/* General */
+
+form{
+    border-radius: 20px;
+    padding: 15px;
+    background-color: white;
+}
+.input-group-text{
+    font-weight: bold;
+    color: green;
+}
+
+/* Submit form button */
+.grabar-button{
+    margin-top: 30px;
+    text-align: center;
+}
+.grabar-button > .btn{
+    height: 40px;
+    width: 200px;
+    border-radius: 15px;
+    background-color: rgb(4, 4, 122);
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: white;
+}
+/* Submit form button */
+
+/* Logo navbar*/
+.municipio-logo{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+.usuario-logo{
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+/* Logo navbar */
+
+/* Table */
+.table-section{
+    margin-top:30px
+}
+table{
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+table,th,td{
+    border: 1px solid black;
+}
+th{
+    padding-left: 10px;
+    color: white;
+    background-color: rgb(4, 4, 122);
+}
+td{
+    padding-left: 10px;
+    background-color: white;
+}
+.modificar{
+    text-align: center;
+    font-size: 22px;
+    width: 35px;
+}
+.borrar{
+    text-align: center;
+    font-size: 22px;
+    width: 35px;   
+}
+/* Table */

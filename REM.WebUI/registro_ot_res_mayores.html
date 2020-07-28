@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro OT residuos mayores</title>
+
+    <!-- Bootstrap4 css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Page css -->
+    <link rel="stylesheet" href="css/registro_ot_res_mayores.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img class="usuario-logo" src="images/demo/image-placeholder.png" alt="" id="idLogoMunic">
+        <a class="navbar-brand" href="index.html">MyResiduo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-1">
+                    <a class="nav-link" href="solicitud_recoleccion_usuario.html">Solicitud de recoleccion</a>
+                </li>
+                <li class="nav-item mr-1">
+                    <a class="nav-link active" href="registro_ot_res_mayores.html">OT residuos mayores</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Historicos
+          </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="listado_solicitudes.html">Historico de solicitudes</a>
+                        <a class="dropdown-item" href="historico_res_mayores.html">Historico de retiros</a>
+                    </div>
+                </li>
+                <li class="nav-item mr-1">
+                    <a class="nav-link" href="usuario_menu.html">Reportes</a>
+                </li>
+                <li class="nav-item mr-1">
+                    <a class="nav-link" href="reporte_recoleccion_realizada.html">Recolecciones realizadas</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- navbar -->
+
+    <!-- container-fluid -->
+    <div class="container-fluid">
+        <h1 class="title text-center">ENCARGADO GENERA OT RESIDUOS MAYORES</h1>
+        <hr class="title-separator">
+        <span style="visibility:hidden;" id="lblIdSolicitud"></span>
+        <!-- row -->
+        <div class="row">
+            <!-- col-2 -->
+            <div class="col-2"></div>
+
+            <!-- col-8 -->
+            <div class="col-8">
+
+                <!--  -->
+                <!--<form action="" class="border shadow">-->
+                <!-- row -->
+                <div class="row">
+                    <!-- primer renglon -->
+                    <div class="col-12 municipio-info text-right" id="lblNumeroOT">
+                        OT: 12345
+                    </div>
+                    <!-- primer renglon -->
+
+                    <div class="col-4">
+                        <!-- calendario -->
+                        <div id="datepicker"></div>
+                    </div>
+                    <div class="col-8">
+                        <!-- nombre de usuario-->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Nombre de usuario</span>
+                            </div>
+                            <input id="txtNombre_usuario" type="text" class="form-control" placeholder="Nombre de usuario">
+                        </div>
+                        <!-- nombre de usuario-->
+
+                        <!-- Direccion-->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Direccion</span>
+                            </div>
+                            <input id="txtDireccion" type="text" class="form-control" placeholder="Direccion">
+                        </div>
+                        <!-- Direccion-->
+
+                        <!-- Tipo de residuo-->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tipo de residuo</span>
+                            </div>
+                            <input type="text" id="txtTipoResiduo" class="form-control" placeholder="Tipo de residuo">
+                        </div>
+                        <!-- Tipo de residuo-->
+
+                        <!-- Administrador asigna retiro-->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Administrador asigna retiro</span>
+                            </div>
+                            <input id="txtAdm_asigna_retiro" type="text" class="form-control" placeholder="Administrador asigna retiro">
+                        </div>
+                        <!-- Administrador asigna retiro-->
+
+                        <!-- Dia-hora recoleccion-->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Dia-hora recoleccion</span>
+                            </div>
+                            <input id="txtDia_hora_recoleccion" type="text" class="form-control" placeholder="Dia-hora recoleccion">
+                        </div>
+                        <!-- Dia-hora recoleccion-->
+
+                        <!-- Camion recolector-->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Camion recolector</span>
+                            </div>
+                            <select class="custom-select" id="ddlCamion">
+                            </select>
+                        </div>
+                        <!-- Camion recolector-->
+
+                        <!-- Chofer -->
+                        <!--<div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Chofer</span>
+                            </div>
+                            <select class="custom-select" id="ddlChofer">
+                            </select>
+                        </div>-->
+                        <!-- Chofer -->
+
+                        <!-- Choferes-->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Choferes</span>
+                            </div>
+                            <input id="txtChoferes" type="text" class="form-control" placeholder="Choferes">
+                        </div>
+                        <!-- Choferes-->
+
+                        <!-- Correos-->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Correos</span>
+                            </div>
+                            <input id="txtCorreos" type="text" class="form-control" placeholder="Correos">
+                        </div>
+                        <!-- Correos-->
+
+                        <!-- ValorRetiro-->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Valor retiro</span>
+                            </div>
+                            <input id="txtValorRetiro" type="text" class="form-control" placeholder="Valor retiro">
+                        </div>
+                        <!-- ValorRetiro-->
+
+                    </div>
+                </div>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-6 grabar-button">
+                        <button class="btn" id="btnGrabar">Grabar OT</button>
+                    </div>
+                    <div class="col-6 grabar-button">
+                        <button class="btn" id="btnEnviar">Enviar</button>
+                    </div>
+                </div>
+                <!--</form>-->
+            </div>
+            <!-- col-8 -->
+
+            <!-- col-2 -->
+            <div class="col-2"></div>
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container-fluid -->
+
+
+    <!-- Bootstrap4 js -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Bootstrap4 js -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="js/funciones.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({
+                  dateFormat: "dd-mm-yy"
+            });
+        });
+
+        $(document).ready(function () {
+            var sIdSolicitud = getCookie('sIdSolicitud');
+            
+            $("#lblIdSolicitud").text(sIdSolicitud);
+
+            CargarLogo();
+            
+            //Carga nombre de usaurio conectado
+            CargarDatosIniciales(sIdSolicitud);
+
+        });
+
+        function CargarLogo() {
+            $.ajax({
+                type: "POST",
+                url: "registro_ot.aspx/WLeerLogoMunicipio",
+                //data: "{'sIdSolicitud': '" + sIdSolicitud + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+                        $("#idLogoMunic").attr('src', obj[1]);
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        }
+
+        function CargarDatosIniciales(sIdSolicitud) {
+            if (sIdSolicitud == '') {
+                window.location.href = "listado_solicitudes.html";
+                return;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "registro_ot_res_mayores.aspx/WLeerDatosIniciales",
+                data: "{'sIdSolicitud': '" + sIdSolicitud + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+               //         $("#lblNombreMunicipio").text(obj[1]);
+                        $("#lblNumeroOT").text(obj[1]);
+                        cargarLista('ddlCamion', obj[2], 'NombreCamion');
+                        if (obj[3] == '-1' || obj[3] == '')
+                            $('#ddlCamion option').eq(0).prop('selected', true);
+                        else
+                            $('#ddlCamion option[value=' + obj[3] + ']').attr('selected', 'selected');
+                        $("#txtChoferes").val(obj[4]);
+                        $("#txtCorreos").val(obj[5]);
+                        $("#datepicker").val(obj[6]);
+                        $("#txtDia_hora_recoleccion").val(obj[7]);
+
+                        $("#txtNombre_usuario").val(obj[8]);
+                        $("#txtDireccion").val(obj[9]);
+                        $("#txtTipoResiduo").val(obj[10]);
+                        $("#txtAdm_asigna_retiro").val(obj[11]);
+                        $("#txtValorRetiro").val(obj[12]);
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        };
+
+        
+        $("#btnEnviar").click(function (event) {
+
+            var sIdSolicitud = $("#lblIdSolicitud").text();
+            var sHora = $("#txtDia_hora_recoleccion").val();
+            var sNumero = '0';             //Se setea en el servidor
+            var sFecha = $("#datepicker").val();
+            var sIdCamion = $("#ddlCamion").val();
+            var sNombreChoferes = $("#txtChoferes").val();
+            var sCorreos = $("#txtCorreos").val();
+            var sValorRetiro = $("#txtValorRetiro").val();
+            if (sIdCamion == '') {
+                alert('Seleccione Camión');
+                return;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "registro_ot_res_mayores.aspx/WEnviarCorreoSolicitud",
+                data: "{'sIdSolicitud': '" + sIdSolicitud + "', 'sNumero': '" + sNumero + "', 'sFecha': '" + sFecha +
+                    "', 'sIdCamion': '" + sIdCamion + "', 'sNombreChoferes': '" + sNombreChoferes + "', 'sCorreos': '" + sCorreos + 
+                    "', 'sHora': '" + sHora + "', 'sValorRetiro': '" + sValorRetiro + "'}", 
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+                        alert('El correo fue enviado con éxito');
+                    }
+                    if (obj[0] == 'error') {
+                        alert(obj[1]);
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+
+        });
+
+        $("#btnGrabar").click(function (event) {
+            //var sIdRuta = $("#ddlRuta").val();
+            var sIdSolicitud = $("#lblIdSolicitud").text();
+            var sHora = $("#txtDia_hora_recoleccion").val();
+            var sNumero = '0';             //Se setea en el servidor
+            var sFecha = $("#datepicker").val();
+            var sIdCamion = $("#ddlCamion").val();
+            var sNombreChoferes = $("#txtChoferes").val();
+            var sCorreos = $("#txtCorreos").val();
+            var sValorRetiro = $("#txtValorRetiro").val();
+            if (sIdCamion == '') {
+                alert('Seleccione Camión');
+                return;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "registro_ot_res_mayores.aspx/WGrabarOT",
+                data: "{'sIdSolicitud': '" + sIdSolicitud + "', 'sNumero': '" + sNumero + "', 'sFecha': '" + sFecha +
+                    "', 'sIdCamion': '" + sIdCamion + "', 'sNombreChoferes': '" + sNombreChoferes + "', 'sCorreos': '" + sCorreos + 
+                    "', 'sHora': '" + sHora + "', 'sValorRetiro': '" + sValorRetiro + "'}", 
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+                        $("#lblNumeroOT").text(obj[1]);
+                        alert('Operación realizada con éxito');
+                    }
+                    if (obj[0] == 'error') {
+                        alert(obj[1]);
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+
+        });
+
+  </script>
+</body>
+</html>

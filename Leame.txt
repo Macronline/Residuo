@@ -1,0 +1,193 @@
+FLEETUP
+https://online.fleetuptrace.com/login.html#!/Mapa
+
+A continuación te indico los datos para ingresar a nuestro ambiente en la plataforma de Fleetup, para que puedas visualizar la información que disponemos de los vehículos que tenemos conectados y que necesitamos extraer por API.
+
+https://online.fleetuptrace.com/login.html
+•Usuario: hdosq
+•Pass: hdosq
+
+==========================================
+/****** Object:  Table [dbo].[TBL_BUS_ParametroGeneral]    Script Date: 06/04/2020 01:29:02 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+
+CREATE TABLE [dbo].[TBL_BUS_Ruta](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[NombreRuta] [varchar](255) NULL,
+	[IdUserCreate] [bigint] NULL,
+	[FechaCreate] [datetime] NULL,
+	[IdUserUpdate] [bigint] NULL,
+	[FechaUpdate] [datetime] NULL,
+ CONSTRAINT [PK_TBL_BUS_Ruta] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+============================================
+
+/****** Object:  StoredProcedure [dbo].[READALL_CLIENTEMUNICIPIO]    Script Date: 06/04/2020 01:36:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[READALL_Ruta]
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	SELECT D.*
+	FROM TBL_BUS_Ruta D
+	ORDER BY D.NombreRuta ;
+	
+END
+
+=============================================
+/****** Object:  Table [dbo].[TBL_BUS_ParametroGeneral]    Script Date: 06/04/2020 01:29:02 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+
+CREATE TABLE [dbo].[TBL_BUS_VehRecolector](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[NombreCamion] [varchar](255) NULL,
+	[NombreMarca] [varchar](255) NULL,
+	[NombreModelo] [varchar](255) NULL,
+	[NombreTagPatente] [varchar](255) NULL,
+	[IdUserCreate] [bigint] NULL,
+	[FechaCreate] [datetime] NULL,
+	[IdUserUpdate] [bigint] NULL,
+	[FechaUpdate] [datetime] NULL,
+ CONSTRAINT [PK_TBL_BUS_VehRecolector] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+===============================================
+
+/****** Object:  StoredProcedure [dbo].[READALL_CLIENTEMUNICIPIO]    Script Date: 06/04/2020 01:36:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[READALL_VehRecolector]
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	SELECT D.*
+	FROM TBL_BUS_VehRecolector D
+	ORDER BY D.NombreCamion ;
+	
+END
+
+==============================================================================================
+
+USE [REM]
+GO
+/****** Object:  StoredProcedure [dbo].[INS_CLIENTEMUNICIPIO]    Script Date: 06/05/2020 01:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[INS_OT]
+	@Numero  bigint
+   ,@Fecha datetime
+   ,@IdClienteMunicipio bigint
+   ,@IdRuta bigint
+   ,@IdCamion bigint
+   ,@NombreChoferes varchar(1000)
+   ,@Correos varchar(1000)
+   ,@IdUserCreate bigint
+   ,@FechaCreate datetime
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	INSERT INTO [REM].[dbo].[TBL_BUS_Ot]
+           ([Numero]           ,[Fecha]           ,[IdClienteMunicipio]
+           ,[IdRuta]           ,[IdCamion]           ,[NombreChoferes]
+           ,[Correos]           ,[IdUserCreate]           ,[FechaCreate])
+     VALUES
+           (@Numero           ,@Fecha           ,@IdClienteMunicipio
+           ,@IdRuta           ,@IdCamion           ,@NombreChoferes
+           ,@Correos           ,@IdUserCreate           ,@FechaCreate)
+
+	Select Scope_Identity();
+
+END
+
+================================================================
+alter table TBL_BUS_VehRecolector add  [IdClienteMunicipio] [bigint] NULL
+
+
+
+========================================================
+Nueva tabla: TBL_BUS_FLEETUP
+Nuevo SP: [INS_FLEETUP_TOKEN]
+Nuevo SP: [READ_FLEETUP_TOKEN_ACTIVO]
+alter table [TBL_BUS_Fleetup] add  [contentJSON] [varchar](300) NULL
+alter table TBL_BUS_VehRecolector add [Fleetup_devId] [varchar](100) NULL
+
+========================================================
+[INS_FleetUpRecordVehPasoGeoCerca]
+[READALL_VehRecolector_For_PROCESSMASSIVE]
+Tabla: [TBL_BUS_FleetUpRecordVehPasoGeoCerca]
+[EXIST_FleetUpRecordVehPasoGeoCerca_DELDIA]
+[READALL_FleetUpRecordVehPasoGeoCerca]
+
+==========================================================
+tabla [TBL_BUS_Solicitud]
+
+alter table TBL_BUS_Ot add [IdSolicitud] bigint NULL
+alter table TBL_BUS_Ot add [ValorRetiro] bigint NULL
+
+SP: [INS_SOLICITUD]
+SP: [READALL_Solicitud]
+SP: READ_Solicitud
+
+==========================================================
+
+SP: [UPD_OT]
+[READ_OT_BY_IDSOLICITUD]
+[READALL_OTs]
+
+=====================
+[READALL_OTs]

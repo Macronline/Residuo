@@ -1,0 +1,21 @@
+h1{
+    margin-bottom: 30px;
+}
+
+.input-group-text{
+    width: 175px;
+}
+
+.load-logo-btn{
+    margin-top: 15px;
+    width: 200px;
+}
+
+.save-municipio{
+    margin-top: 30px;
+    text-align: center;
+}
+.save-municipio > .btn{
+    height: 50px;
+    width: 200px;
+}

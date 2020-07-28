@@ -1,0 +1,9 @@
+﻿Estimado ciudadano(a):
+
+Te informamos que con fecha [FECHA_RETIRO] a partir de las [HORA_RETIRO] horas se realizará la recolección de residuos solicitada de acuerdo al siguiente detalle:
+
+Camión patente: [PATENTE_CAMION_RETIRO]
+Chofer: [CHOFER_CAMION_RETIRO]
+
+Si tienes cualquier duda, solo llama a [NUMERO_FONO_PARA_LLAMAR_CIUDADANO]
+Nota: Este e-mail es generado de manera automática, por favor no respondas a este mensaje.

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuracion y listado de rutas</title>
+
+  <!-- Bootstrap4 css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Page css -->
+  <link rel="stylesheet" href="css/configuracion_listado_rutas.css">
+  <link rel="stylesheet" href="css/global.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">MyResiduo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mr-1">
+          <a class="nav-link" href="registro_municipio.html">Municipios</a>
+        </li>
+        <li class="nav-item mr-1">
+          <a class="nav-link" href="registro_geocercas.html">Geocercas</a>
+        </li>
+        <li class="nav-item mr-1">
+          <a class="nav-link active" href="configuracion_listado_rutas_h2q.html">Rutas</a>
+        </li>
+        <li class="nav-item mr-1">
+          <a class="nav-link" href="configuracion_vehiculos_Municipio.html">Vehiculos recolectores</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- navbar -->
+
+
+  <!-- container-fluid -->
+  <div class="container-fluid">
+    <h1 class="title text-center">Configuracion y listado de rutas</h1>
+    <hr class="title-separator">
+    <!-- row -->
+    <div class="row">
+      <!-- col-3 -->
+      <div class="col-3"></div>
+      
+      <!-- col-6 -->
+      <div class="col-6">
+        <!-- section nueva ruta -->
+        <section>
+          <!-- form nueva ruta -->
+         <!-- <form action="" class="border shadow">-->
+              <span style="visibility:visible;" id="IdRutaParaEditar"></span>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Municipio</span>
+                </div>
+                 <select class="custom-select" id="ddlMunicipio">
+                    <!--<option selected>Elegir Municipio</option>
+                    <option value="1">Municipio1</option>
+                    <option value="2">Municipio2</option>
+                    <option value="3">Municipio3</option>-->
+                  </select>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nombre de ruta</span>
+              </div>
+              <input id="nombre-ruta" type="text" class="form-control" placeholder="Nombre de ruta">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">GeoCerca</span>
+              </div>
+              <select class="custom-select" id="ddlgeocerca">
+            <!--    <option selected>Elegir GeoCerca</option>
+                <option value="1">geocerca1</option>
+                <option value="2">geocerca2</option>
+                <option value="3">geocerca3</option>-->
+              </select>
+            </div>
+
+            <div class="grabar-button">
+              <button class="btn" id="btnGrabar">Grabar</button>
+            </div>
+          <!--</form>-->
+          <!-- form nueva ruta -->  
+        </section>
+        <!-- section nueva ruta -->
+      </div>
+      <!-- col-6 -->
+      
+      <!-- col-3 -->
+      <div class="col-3"></div>
+    </div>
+    <!-- row -->
+
+      <!-- Listado rutas -->
+  <section class="table-section">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <table id="tabla_rutas">
+          <h2>Rutas</h2>
+          <tr>
+            <th>Municipio</th>
+            <th>Ruta</th>
+            <th>GeoCerca</th> 
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>unMunicipio</td>
+            <td>unaRuta</td>
+            <td>unaGeocerca</td>
+            <td class="modificar"><i class="fa fa-pencil" style="color: green;"></i></td>
+            <td class="borrar"><i class="fa fa-trash" style="color: red;"></i></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </section>
+  <!-- Listado municipios -->
+  </div>
+  <!-- container-fluid -->
+  
+
+  <!-- Bootstrap4 js -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <!-- Bootstrap4 js -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/funciones.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            //$("#Correo").val('m_Figueroa');
+
+            //Carga nombre de usaurio conectado
+            CargarNombreUsuarioConectado();
+
+        });
+
+        function CargarNombreUsuarioConectado() {
+            $.ajax({
+                type: "POST",
+                url: "configuracion_listado_rutas_h2q.aspx/WLeerUsuarioConectado",
+                //data: "{'sNombreMunic': '" + sNombreMunic + "', 'sRutMunic': '" + sRutMunic + "', 'sNombreUserMunic': '" + sNombreUserMunic +
+                //    "', 'sRutUserMunic': '" + sRutUserMunic + "', 'sCorreoUserMunic': '" + sCorreoUserMunic + "', 'sClave': '" + sClave +
+                //    "', 'sClave2': '" + sClave2 + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+                        //$("#NomUsrConectado").text(obj[1]);
+                        cargarLista('ddlMunicipio', obj[1], 'NombreMunic');
+
+                        cargarLista('ddlgeocerca', obj[2], 'NombreGeocerca');
+
+                        $('#tabla_rutas').find("tr:gt(0)").remove();
+                        $('#tabla_rutas> tbody:last').append(obj[3]);
+
+                        
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        }
+
+        $(function () {
+            $("#ddlMunicipio").change(function () {
+                var selectedText = $(this).find("option:selected").text();
+                var IdMunicipio = $(this).val();
+                //alert("Selected Text: " + selectedText + " Value: " + IdMunicipio);
+
+                $.ajax({
+                    type: "POST",
+                    url: "configuracion_listado_rutas_h2q.aspx/WLeerRutasyGeocercasDelMunicipio",
+                    data: "{'IdMunicipio': '" + IdMunicipio + "'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        obj = parseJSON(response.d);
+                        if (obj[0] == 'Exito') {
+                            //cargarLista('ddlMunicipio', obj[1], 'NombreMunic');
+
+                            cargarLista('ddlgeocerca', obj[1], 'NombreGeocerca');
+
+                            //cargarLista('ddlgeocerca', obj[1], 'NombreGeocerca');
+                            $('#tabla_rutas').find("tr:gt(0)").remove();
+                            $('#tabla_rutas> tbody:last').append(obj[2]);
+                        }
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+
+
+            });
+        });
+
+        $("#btnGrabar").click(function (event) {
+            var IdRutasParaEditar = $("#IdRutasParaEditar").text();
+
+            var sNombreRuta = $("#nombre-ruta").val();
+            if (sNombreRuta.length == 0) {
+                alert('Ingrese Nombre de Ruta');
+                return;
+            }
+            //var sUbicacion = $("#ubicacion").val();
+            //var sCoordenadas = $("#coordenadas").val();
+            //var sObservaciones = $("#observaciones").val();
+
+            var sIdClienteMunicipio = $("#ddlMunicipio").val();
+            if (sIdClienteMunicipio == null) {
+                alert('Seleccione un Municipio');
+                return;
+            }
+            if (sIdClienteMunicipio.length == 0 || sIdClienteMunicipio == "-1") {
+                alert('Seleccione un Municipio');
+                return;
+            }
+
+            var sIdGeocerca = $("#ddlgeocerca").val();
+            if (sIdGeocerca == null)
+            {
+                alert('Seleccione una Geocerca');
+                return;
+            }
+            if (sIdGeocerca.length == 0 || sIdGeocerca == "-1" || sIdGeocerca == null) {
+                alert('Seleccione una Geocerca');
+                return;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "configuracion_listado_rutas_h2q.aspx/WGrabarRutas",
+                data: "{'sId': '" + IdRutaParaEditar + "','sNombreRuta': '" + sNombreRuta + "', 'sIdClienteMunicipio': '" + sIdClienteMunicipio + "', 'sIdGeocerca': '" + sIdGeocerca + "'}",
+
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+                        $('#tabla_rutas').find("tr:gt(0)").remove();
+                        $('#tabla_rutas> tbody:last').append(obj[1]);
+                        alert('Operación realizada con éxito');
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+
+        });
+
+        function EditRutas(Id, imgCtrl) {
+
+            //Se leen los datos y se cargan en los inputs
+            $.ajax({
+                type: "POST",
+                url: "configuracion_listado_rutas_h2q.aspx/WLeerParaEditarRutas",
+                data: "{'Id': '" + Id + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    obj = parseJSON(response.d);
+                    if (obj[0] == 'Exito') {
+                        $("#nombre-ruta").val(obj[1]);
+                        $("#ddlMunicipio").val(obj[2]);
+                        $("#ddlgeocerca").val(obj[3]);
+                        //$("#observaciones").val(obj[4]);
+                        //$("#ddlMunicipio").val(obj[5]);
+                        //$("#telefono").val(obj[6]);
+
+                        $("#IdRutaParaEditar").text(Id);
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        }
+        function DeleteRutas(Id, imgCtrl) {
+            var r = confirm("¿Desea eliminar?");
+            if (r == true) {
+
+                //Se leen los datos y se cargan en los inputs
+                $.ajax({
+                    type: "POST",
+                    url: "configuracion_listado_rutas_h2q.aspx/WEliminarRutas",
+                    data: "{'Id': '" + Id + "'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        obj = parseJSON(response.d);
+                        if (obj[0] == 'Exito') {
+                            $('#tabla_rutas').find("tr:gt(0)").remove();
+                            $('#tabla_rutas> tbody:last').append(obj[1]);
+                            alert('La operación fue ejecutada');
+                        }
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            }
+        }
+
+    </script>
+
+
+
+
+</body>
+</html>

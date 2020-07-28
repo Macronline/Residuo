@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuracion y listado de rutas</title>
+
+  <!-- Bootstrap4 css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Page css -->
+  <link rel="stylesheet" href="css/configuracion_listado_rutas.css">
+  <link rel="stylesheet" href="css/global.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+   <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img class="municipio-logo" src="images/demo/image-placeholder.png" alt="">
+    <a class="navbar-brand" href="index.html">MyResiduo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Mantenedores
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="configuracion_listado_rutas.html">Rutas</a>
+            <a class="dropdown-item" href="configuracion_vehiculos_municipio.html">Camiones</a>
+          </div>
+        </li>
+        <li class="nav-item mr-1">
+          <a class="nav-link" href="registro_ot.html">OT</a>
+        </li>
+        <li class="nav-item mr-1">
+          <a class="nav-link active" href="municipio_menu.html">Reportes</a>
+        </li>
+        <li class="nav-item mr-1">
+          <a class="nav-link" href="solicitud_recoleccion.html">Usuarios</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- navbar -->
+
+
+  <!-- container-fluid -->
+  <div class="container-fluid">
+    <h1 class="title text-center">Configuracion y listado de rutas</h1>
+    <hr class="title-separator">
+    <!-- row -->
+    <div class="row">
+      <!-- col-3 -->
+      <div class="col-3"></div>
+      
+      <!-- col-6 -->
+      <div class="col-6">
+        <!-- section nueva ruta -->
+        <section>
+          <!-- form nueva ruta -->
+          <!--<form action="" class="border shadow">-->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nombre de ruta</span>
+              </div>
+              <input id="ruta" type="text" class="form-control" placeholder="Nombre de ruta">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">GeoCerca</span>
+              </div>
+              <select class="custom-select" id="geocerca">
+                <option selected>Elegir GeoCerca</option>
+                <option value="1">geocerca1</option>
+                <option value="2">geocerca2</option>
+                <option value="3">geocerca3</option>
+              </select>
+            </div>
+
+            <div class="grabar-button">
+              <button type="submit" class="btn">Grabar</button>
+            </div>
+          <!--</form>-->
+          <!-- form nueva ruta -->  
+        </section>
+        <!-- section nueva ruta -->
+      </div>
+      <!-- col-6 -->
+      
+      <!-- col-3 -->
+      <div class="col-3"></div>
+    </div>
+    <!-- row -->
+
+      <!-- Listado rutas -->
+  <section class="table-section">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <table>
+          <h2>Rutas</h2>
+          <tr>
+            <th>Ruta</th>
+            <th>GeoCerca</th> 
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>unaRuta</td>
+            <td>unaGeocerca</td>
+            <td class="modificar"><i class="fa fa-pencil" style="color: green;"></i></td>
+            <td class="borrar"><i class="fa fa-trash" style="color: red;"></i></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </section>
+  <!-- Listado municipios -->
+  </div>
+  <!-- container-fluid -->
+  
+
+  <!-- Bootstrap4 js -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <!-- Bootstrap4 js -->
+</body>
+</html>
